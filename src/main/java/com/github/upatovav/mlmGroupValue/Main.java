@@ -81,7 +81,7 @@ public class Main {
                 .map(Main::computeGo) //recursive call
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
         user.setGo(user.getValue().add(go));
-        if (user.getGo().compareTo(GO_LIMIT) > 0) {
+        if (user.getGo().compareTo(GO_LIMIT) > -1) {
             return BigDecimal.ZERO;
         } else {
             return user.getGo();
